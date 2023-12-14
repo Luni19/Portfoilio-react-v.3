@@ -8,22 +8,23 @@ import Skills from "./pages/Skills.js";
 import Contacts from "./pages/Contacts.js";
 import Projects from "./pages/Projects.js";
 import Project from "./pages/Project";
+import { BrowserRouter} from "react-router-dom"
 
 function App() {
   return (
     <div className="App">
-      <Router basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <ScrollToTop />
-        <Header />
+        <Header/>
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Main/>} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/project/:id" element={<Project />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/Skills" element={<Skills />} />
         </Routes>
         <Footer />
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
